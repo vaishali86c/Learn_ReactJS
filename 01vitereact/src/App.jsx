@@ -1,11 +1,9 @@
 import Chai from './Chai.jsx';
-
-
+import Counter from './Components/UseState.jsx';
 function App() {
   return (
     <>
-    <Chai />
-    <h1>hello dev</h1>
+      <Counter />
     </>
   )
 }
