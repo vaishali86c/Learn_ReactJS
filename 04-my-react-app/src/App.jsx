@@ -1,4 +1,5 @@
 import './App.css'
+import Form from './components/form'
 import { MyCar, MyCars} from './components/myCar'
 import { MyList, UserList } from './components/myList'
 
@@ -12,6 +13,7 @@ function App() {
         <UserList />
         <MyCar />
         <MyCars />
+        <Form />
       </div>
 
     </>
