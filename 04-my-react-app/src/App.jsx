@@ -1,6 +1,6 @@
 import './App.css'
 import { MyCar, MyCars} from './components/myCar'
-import { MyForm, MyFormSubmit } from './components/MyForm'
+import { FormSelected, MyForm, MyFormSubmit, TextArea } from './components/MyForm'
 import { MyList, UserList } from './components/myList'
 
 function App() {
@@ -15,6 +15,9 @@ function App() {
         <MyCars />
         <MyForm />
         <MyFormSubmit />
+        <TextArea />
+        <hr />
+        <FormSelected />
       </div>
 
     </>

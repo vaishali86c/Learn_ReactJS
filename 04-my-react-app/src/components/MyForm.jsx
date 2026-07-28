@@ -45,4 +45,43 @@ function MyFormSubmit() {
     )
 }
 
-export { MyForm, MyFormSubmit };
+function TextArea() {
+
+    const [mytxt, setMytxt] = useState("");
+
+    function handleChange(e) {
+        setMytxt(e.target.value);
+    }
+
+    return (
+        <form>
+            <textArea placeholder="Enter your text here" 
+            value={mytxt} 
+            onChange={handleChange}
+            />
+            <p>Current value: {mytxt}</p>
+        </form>
+    )
+}
+
+function FormSelected() {
+
+    const [selectedCar, setSelectedCar] = useState("Volvo");
+
+    function handleChange(e) {
+        setSelectedCar(e.target.value);
+    }
+
+    return (
+        <form>
+            <select value={selectedCar} onChange={handleChange}>
+                <option>Ford</option>
+                <option>Volvo</option>
+                <option>Fiat</option>
+            </select>
+        </form>
+    )
+}
+
+
+export { MyForm, MyFormSubmit, TextArea, FormSelected };
