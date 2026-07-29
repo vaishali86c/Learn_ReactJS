@@ -83,5 +83,39 @@ function FormSelected() {
     )
 }
 
+function MultipleInput() {
 
-export { MyForm, MyFormSubmit, TextArea, FormSelected };
+    const [inputs, setInputs] = useState({});
+
+    const handleChange = (e) => {
+        const name = e.target.name;
+        const value = e.target.value;
+        setInputs(values => ({...values, [name]: value}))
+    }
+
+    return (
+        <form>
+            <label>First Name:
+                <input 
+                type="text"
+                name="firstName"
+                value={inputs.firstName || ""}
+                onChange={handleChange}
+                />
+            </label>
+            <br />
+            <label>Last Name:
+                <input 
+                type="text"
+                name="lastName"
+                value={inputs.lastName || ""}
+                onChange={handleChange}
+                />
+            </label>
+            <br />
+            <p>Current Values: {inputs.firstName}{inputs.lastName} </p>
+        </form>
+    )
+}
+
+export { MyForm, MyFormSubmit, TextArea, FormSelected, MultipleInput };
