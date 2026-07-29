@@ -1,6 +1,7 @@
 import './App.css'
+import { Component1, Counter, FavoriteColor, PriceTracker, WithCallbackExample } from './components/Hooks'
 import { MyCar, MyCars} from './components/myCar'
-import { FormSelected, MyForm, MyFormSubmit, TextArea } from './components/MyForm'
+import { FormSelected, MultipleInput, MyForm, MyFormSubmit, TextArea } from './components/MyForm'
 import { MyList, UserList } from './components/myList'
 
 function App() {
@@ -18,6 +19,13 @@ function App() {
         <TextArea />
         <hr />
         <FormSelected />
+        <MultipleInput />
+        <br />
+        <FavoriteColor />
+        <Counter />
+        <Component1 />
+        <PriceTracker currentPrice={100} />
+        <WithCallbackExample />
       </div>
 
     </>
