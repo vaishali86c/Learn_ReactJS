@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useContext, createContext, useRef } from "react";
 
 // useState 
 function FavoriteColor() {
@@ -38,4 +38,61 @@ function Counter() {
     )
 }
 
-export { FavoriteColor, Counter } 
+// React Context
+const UserContext = createContext();
+
+function Component1() {
+
+    const [user, setUser] = useState("John");
+
+    return (
+        <UserContext.Provider value={user}>
+            <h1>{`Hello ${user}!`}</h1>
+            <Component2 />
+        </UserContext.Provider>
+    )
+}
+
+function Component2() {
+  return (
+    <>
+      <h1>Component 2</h1>
+      <Component3 />
+    </>
+  );
+}
+
+function Component3() {
+  const user = useContext(UserContext);
+
+  return (
+    <>
+      <h1>Component 3</h1>
+      <h2>{`Hello ${user} again!`}</h2>
+    </>
+  );
+}
+
+// useRef
+
+function PriceTracker({ currentPrice }) {
+  const prevPriceRef = useRef(currentPrice);
+
+  useEffect(() => {
+    prevPriceRef.current = currentPrice; // Silent update after render
+  });
+
+  const previousPrice = prevPriceRef.current;
+
+  return (
+    <div>
+      <p>Current Price: ₹{currentPrice}</p>
+      <p>Previous Price: ₹{previousPrice}</p>
+      <p>{currentPrice > previousPrice ? "📈 Increased" : "📉 Decreased"}</p>
+    </div>
+  );
+}
+
+
+
+export { FavoriteColor, Counter, Component1, PriceTracker, WithCallbackExample } 

@@ -1,5 +1,5 @@
 import './App.css'
-import { Counter, FavoriteColor } from './components/Hooks'
+import { Component1, Counter, FavoriteColor, PriceTracker, WithCallbackExample } from './components/Hooks'
 import { MyCar, MyCars} from './components/myCar'
 import { FormSelected, MultipleInput, MyForm, MyFormSubmit, TextArea } from './components/MyForm'
 import { MyList, UserList } from './components/myList'
@@ -23,6 +23,9 @@ function App() {
         <br />
         <FavoriteColor />
         <Counter />
+        <Component1 />
+        <PriceTracker currentPrice={100} />
+        <WithCallbackExample />
       </div>
 
     </>
